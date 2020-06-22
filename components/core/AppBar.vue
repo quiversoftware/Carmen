@@ -8,7 +8,7 @@
     <v-slide-x-transition>
       <v-img
         v-if="showLogo"
-        :src="require('@/assets/logo.png')"
+        :src="require('@/assets/fumira_portada_c.png')"
         class="shrink"
         contain
         height="50"
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import SocialMedia from '@/components/SocialMedia.vue';
+import SocialMedia from '@/components/SocialMedia.vue'
 
 export default {
   name: 'AppBar',
