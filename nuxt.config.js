@@ -22,7 +22,14 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap',
+      },
+    ],
   },
   /*
    ** Global CSS
@@ -50,7 +57,43 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    '@nuxtjs/firebase',
   ],
+  /*
+   ** Firebase Configuration
+   */
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyDhgDPLjULcT9SNFct0ihBKNaGKO97krko',
+      authDomain: 'carmen-a698d.firebaseapp.com',
+      databaseURL: 'https://carmen-a698d.firebaseio.com',
+      projectId: 'carmen-a698d',
+      storageBucket: 'carmen-a698d.appspot.com',
+      messagingSenderId: '277237810105',
+      appId: '1:277237810105:web:71a74fff996f843fa72c68',
+      measurementId: 'G-2N8C6D8LWN',
+    },
+    services: {
+      auth: true, // Just as example. Can be any other service.
+      firestore: true,
+      functions: true,
+      storage: true,
+      realtimeDb: true,
+      messaging: true,
+      performance: true,
+      analytics: true,
+    },
+  },
+
+  env: {
+    FIRE_ENV: process.env.FIRE_ENV,
+  },
+
+  render: {
+    bundleRenderer: {
+      runInNewContext: false,
+    },
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -67,6 +110,7 @@ export default {
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: false,
     theme: {
       themes: {
         light: {

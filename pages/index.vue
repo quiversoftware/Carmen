@@ -44,7 +44,7 @@
                     class="align-self-end"
                     fab
                     outlined
-                    @click="$vuetify.goTo('#about-me')"
+                    @click="$vuetify.goTo('#articles')"
                   >
                     <v-icon>mdi-chevron-double-down</v-icon>
                   </v-btn>
@@ -54,9 +54,10 @@
           </v-img>
         </v-row>
       </section>
-      <AboutMe />
       <EducationalAreas />
       <Phrase />
+      <Articles />
+      <AboutMe />
     </v-main>
   </v-layout>
 </template>
@@ -65,8 +66,37 @@
 import AboutMe from '@/components/AboutMe'
 import EducationalAreas from '@/components/EducationalAreas.vue'
 import Phrase from '@/components/Phrase.vue'
+import Articles from '@/components/Articles'
 export default {
-  components: { AboutMe, EducationalAreas, Phrase },
+  components: { Articles, AboutMe, EducationalAreas, Phrase },
+  methods: {
+    // async readFromFirestore() {
+    //   const messageRef = this.$fireStore
+    //     .collection('message')
+    //     .doc('P3Fnaqe9tE7SXOVhaRyO')
+    //   let data
+    //   try {
+    //     data = await messageRef.get()
+    //   } catch (e) {
+    //     alert(e)
+    //     return ''
+    //   }
+    //   console.log(data.data().title)
+    // },
+    // async writeToFirestore() {
+    //   const ref = this.$fireStore.collection("test").doc("test")
+    //   const document = {
+    //     text: "This is a test message."
+    //   }
+    //   try {
+    //     await ref.set(document)
+    //   } catch (e) {
+    //     // TODO: error handling
+    //     console.error(e)
+    //   }
+    //   this.writeSuccessful = true
+    // },
+  },
 }
 </script>
 
